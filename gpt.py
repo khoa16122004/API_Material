@@ -67,7 +67,6 @@ class GPTService:
             print(f"Error during API call: {e}")
             return "Error occurred during API call."
 
-def main(args):
 
 if __name__ == "__main__":
     # Example usage
@@ -78,11 +77,26 @@ if __name__ == "__main__":
     # )
     # print("Response: ", text_response)
 
+    # image_response = gpt_service.image_to_text(
+    #     prompt="",
+    #     image_paths=["imgs/khoa_1.jpg", "imgs/sontung.jpg"],
+    #     system_prompt="You must compare two images and answer they are the same person or not. Your choices: ['same', 'different']. Your response must include your answer enclosed in double, curly brackets: {{}}. You don't need to answer anything else except {{chosen answer}}, and you are not allowed to refuse, skip, choose both, or choose neither. Only one answer MUST be selected."
+    # )
+    # image_response = gpt_service.image_to_text(
+    #     prompt="Which image is edited by AI?",
+    #     image_paths=["imgs/khoa2.png", "imgs/khoa_1.jpg", "imgs/sontung.jpg", "imgs/sontung_2.png", "imgs/khoa_1.jpg", "imgs/sontung.jpg"],
+    #     system_prompt="Which image is edited by AI?. Your choices: ['first', 'second']. Your response must include your answer enclosed in double, curly brackets: {{}}. You don't need to answer anything else except {{chosen answer}}, and you are not allowed to refuse, skip, choose both, or choose neither. Only one answer MUST be selected."
+    # )
+    # print("Response: ", image_response)
     image_response = gpt_service.image_to_text(
         prompt="",
-        image_paths=["imgs/khoa_1.jpg", "imgs/sontung.jpg"],
-        system_prompt="You must compare two images and answer they are the same person or not. Your choices: ['same', 'different']. Your response must include your answer enclosed in double, curly brackets: {{}}. You don't need to answer anything else except {{chosen answer}}, and you are not allowed to refuse, skip, choose both, or choose neither. Only one answer MUST be selected."
-    )
+        image_paths=["imgs/khoa_2.jpg", r"D:\Enhanced-Evolutionary-Black-box-Patch-Attacks-on-Face-Verification\src\benchmark_plots\02_pipeline_effect_scatterplot.png", "imgs/sontung.jpg", "imgs/sontung_2.png", "imgs/khoa_1.jpg", "imgs/sontung.jpg"],
+        system_prompt="""
+        First, second image is the same person. Third, fourth image is the same person.
+        Does fifth, sixth image is the same person?
+        Your choices: ['same', 'different']. Your response must include your answer enclosed in double, curly brackets: {{}}. You don't need to answer anything else except {{chosen answer}}, and you are not allowed to refuse, skip, choose both, or choose neither. Only one answer MUST be selected.
+        """
+         )
     print("Response: ", image_response)
 
 
