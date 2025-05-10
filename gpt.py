@@ -69,7 +69,7 @@ class GPTService:
 
 if __name__ == "__main__":
     # Example usage
-    gpt_service = GPTService(model_name="gpt-4o")
+    # gpt_service = GPTService(model_name="gpt-4o")
     # text_response = gpt_service.text_to_text(
     #     prompt="What is AI?",
     #     system_prompt="You are an AI assistant."
@@ -78,8 +78,8 @@ if __name__ == "__main__":
 
     image_response = gpt_service.image_to_text(
         prompt="",
-        image_paths=["imgs/khoa_1.jpg"],
-        system_prompt="Describe the images."
+        image_paths=["imgs/khoa_1.jpg", "imgs/khoa_2.jpg"],
+        system_prompt="Describe 2 images."
     )
     print("Response: ", image_response)
 
