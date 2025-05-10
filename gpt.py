@@ -67,6 +67,8 @@ class GPTService:
             print(f"Error during API call: {e}")
             return "Error occurred during API call."
 
+def main(args):
+
 if __name__ == "__main__":
     # Example usage
     gpt_service = GPTService(model_name="gpt-4o")
