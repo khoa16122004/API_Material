@@ -69,17 +69,17 @@ class GPTService:
 
 if __name__ == "__main__":
     # Example usage
-    # gpt_service = GPTService(model_name="gpt-4o")
+    gpt_service = GPTService(model_name="gpt-4o")
     # text_response = gpt_service.text_to_text(
-    #     prompt="What is AI?",
+    #     prompt="what is my name?",
     #     system_prompt="You are an AI assistant."
     # )
     # print("Response: ", text_response)
 
     image_response = gpt_service.image_to_text(
         prompt="",
-        image_paths=["imgs/khoa_1.jpg", "imgs/khoa_2.jpg"],
-        system_prompt="Describe 2 images."
+        image_paths=["imgs/khoa_1.jpg", "imgs/sontung.jpg"],
+        system_prompt="You must compare two images and answer they are the same person or not. Your choices: ['same', 'different']. Your response must include your answer enclosed in double, curly brackets: {{}}. You don't need to answer anything else except {{chosen answer}}, and you are not allowed to refuse, skip, choose both, or choose neither. Only one answer MUST be selected."
     )
     print("Response: ", image_response)
 
